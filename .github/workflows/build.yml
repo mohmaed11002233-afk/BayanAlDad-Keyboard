@@ -17,10 +17,20 @@ jobs:
 
       - name: Build with Gradle
         run: |
+          mkdir -p app/src/main/java/com/bayandalad/keyboard
+          mkdir -p app/src/main/res/layout
+          mkdir -p app/src/main/res/xml
+          
+          if [ -f "BayanKeyboardService.kt" ]; then
+            cp BayanKeyboardService.kt app/src/main/java/com/bayandalad/keyboard/
+          fi
+          if [ -f "bayan_keyboard_layout.xml" ]; then
+            cp bayan_keyboard_layout.xml app/src/main/res/layout/
+          fi
+
           echo "include ':app'" > settings.gradle
-          mkdir -p app/src/main
           chmod +x ./gradlew || true
-          # إنشاء ملف بناء مؤقت في حال لم يتواجد
+          
           cat << 'EOF' > build.gradle
           allprojects {
               repositories {
@@ -29,6 +39,7 @@ jobs:
               }
           }
           EOF
+
           cat << 'EOF' > app/build.gradle
           plugins {
               id 'com.android.application'
@@ -46,6 +57,7 @@ jobs:
               }
           }
           EOF
+
           gradle wrapper
           ./gradlew assembleDebug
 
