@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bayan.aldad">
+
+    <application
+        android:allowBackup="true"
+        android:label="بيان الضاد"
+        android:supportsRtl="true">
+
+        <service
+            android:name=".BayankeyboardService"
+            android:label="بيان الضاد"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+        </service>
+
+    </application>
+</manifest>
