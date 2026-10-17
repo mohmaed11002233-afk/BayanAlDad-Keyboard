@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#ECEFF1"
+    android:padding="8dp">
+
+    <!-- شريط الأدوات العلوي ويحتوي على زر التصحيح السريع لبيان الضاد -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#CFD8DC">
+
+        <Button
+            android:id="@+id/btn_quick_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ التصحيح السريع - بيان الضاد"
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#00C853"
+            android:paddingHorizontal="16dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="center"
+        android:text="[ لوحة مفاتيح بيان الضاد ]"
+        android:textColor="#37474F"
+        android:textSize="15sp"/>
+
+</LinearLayout>
+
